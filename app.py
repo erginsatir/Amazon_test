@@ -15,8 +15,7 @@ def pull_amazon_data(url):
             sel = Selector(text=response.text)
             variant_data = re.findall(r'dimensionValuesDisplayData"\s*:\s* ({.+?}),\n', response.text)
             feature_bullets = [bullet.strip() for bullet in sel.css("#feature-bullets li ::text").getall()]
-            price_xpath = '//td[@class="a-color-secondary" and contains(text(), "Price:")]/following-sibling::td/span[@class="a-offscreen"]/text()'
-
+            price_xpath = '//td[@class="a-color-secondary" and contains(text(), "Price:")]/following-sibling::td/span[contains(@class, "a-price")]/span[@class="a-offscreen"]/text()'
 
             product_data_list.append({
                 "name": sel.css("#productTitle::text").get("").strip(),
