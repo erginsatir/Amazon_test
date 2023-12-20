@@ -1,0 +1,4 @@
+parsel==1.6.0
+Requests==2.31.0
+streamlit==1.29.0
+validators==0.22.0

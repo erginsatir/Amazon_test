@@ -1,12 +1,10 @@
 import streamlit as st 
 import validators
-
-def pull_amazon_data(url):
-
-    import re
-    import requests
-    from parsel import Selector
+import re
+import requests
+from parsel import Selector
     
+def pull_amazon_data(url):
     product_data_list = []
 
     product_url = url
