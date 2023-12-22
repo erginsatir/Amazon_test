@@ -19,7 +19,7 @@ def pull_amazon_data(url):
 
             product_data_list.append({
 
-              product_data_list.append({
+           
                 "name": sel.css("#productTitle::text").get("").strip(),
                 "price": sel.css('.a-price-whole::text').get() + '.' + sel.css('.a-price-fraction::text').get(),
                 "price_4": sel.css('.a-price-fraction::text').get() ,
