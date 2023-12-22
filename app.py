@@ -19,7 +19,16 @@ def pull_amazon_data(url):
 
             product_data_list.append({
 
-                "price_3": sel.css('.product-list__price::text').get() ,
+              product_data_list.append({
+                "name": sel.css("#productTitle::text").get("").strip(),
+                "price": sel.css('.a-price-whole::text').get() + '.' + sel.css('.a-price-fraction::text').get(),
+                "price_4": sel.css('.a-price-fraction::text').get() ,
+                "price_5": sel.css('.a-tex-price::text').get() ,
+                "price_2":  sel.xpath(price_xpath).get(),
+                "stars": sel.css("i[data-hook=average-star-rating] ::text").get("").strip(),
+                "rating_count": sel.css("#acrCustomerReviewText::text").get("").strip(),
+                "feature_bullets": feature_bullets,
+                "variant_data": variant_data,
 
             })
     except Exception as e:
